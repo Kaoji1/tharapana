@@ -9,4 +9,4 @@ if (!$conn) {
     die('DB connect failed');
 }
 mysqli_set_charset($conn, 'utf8mb4');
-// ไม่มี HTML ไม่มี tag ปิด
+?>
