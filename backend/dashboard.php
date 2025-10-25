@@ -6,8 +6,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // --- 1. ส่วนเชื่อมต่อฐานข้อมูล ---
 $host = "localhost";
-$usr = "root";
-$pwd = "";
+$usr = "webuser";
+$pwd = "123456";
 $dbName = "tharapana";
 $conn = mysqli_connect($host, $usr, $pwd, $dbName);
 if (!$conn) {

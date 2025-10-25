@@ -6,7 +6,7 @@ $dbName = "tharapana";
 $conn = mysqli_connect($host, $usr, $pwd, $dbName);
 if (!$conn) {
     http_response_code(500);
-    die('DB connect failedd');
+    die('DB connect failed');
 }
 mysqli_set_charset($conn, 'utf8mb4');
 ?>
