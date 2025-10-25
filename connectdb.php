@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
-$usr = "root";
-$pwd = "";
+$usr = "webuser";
+$pwd = "123456";
 $dbName = "tharapana";
 $conn = mysqli_connect($host, $usr, $pwd, $dbName);
 if (!$conn) {
