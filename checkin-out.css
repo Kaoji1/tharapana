@@ -1,0 +1,218 @@
+:root {
+  --primary:#0f8b79;
+  --primary-hover:#0d7667;
+  --primary-contrast:#fff;
+  --chip-bg:#fff;
+  --chip-border:#d1d5db;
+  --chip-text:#111827;
+  --muted:#6b7280;
+  --shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+/* --- Desktop (>= 769px) --- */
+.date-form {
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+  background:#fff;
+  border:1px solid #d1d5db;
+  border-radius:999px;
+  padding:.4rem;
+  box-shadow:var(--shadow);
+  width:fit-content;
+  margin:32px auto;
+  position:relative;
+}
+
+/* ช่องเลือกวันที่ */
+.date-form > label {
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.65rem 1rem;
+  border-radius:999px;
+  min-width:300px;   /* <<< กว้างขึ้น */
+  cursor:pointer;
+  font-weight:500;
+  color:var(--chip-text);
+  flex:1;
+}
+
+/* --- Mobile (<= 768px) --- */
+@media (max-width: 768px){
+  .date-form {
+    flex-direction:column;  /* <<< บังคับเรียงลง */
+    align-items:stretch;
+    border-radius:20px;
+    padding:1rem;
+    width:90%;   /* <<< กิน 90% หน้าจอ */
+  }
+  .date-form > label {
+    width:100%;
+    min-width:unset;
+    margin-bottom:.75rem;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:.75rem 1rem;
+  }
+  .guest-box {
+    width:100%;
+    border-radius:12px;
+    margin-bottom:.75rem;
+    padding:1rem;
+  }
+  .date-form button[type="submit"] {
+    width:100%;
+    border-radius:12px;
+    padding:1rem;
+    font-size:1.1rem;
+  }
+}
+
+
+/* ป็อปอัพ guest panel */
+.guest-panel {
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:8px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);
+  z-index:50;
+  width:280px;
+}
+.panel-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+  font-weight:500;
+  color:#111827;
+}
+.controls {
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.controls button {
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid #d1d5db;
+  background:#fff;
+  color:#0f172a;
+  font-size:20px;
+  cursor:pointer;
+  transition:.2s;
+}
+.controls button:hover {
+  background:#f3f4f6;
+}
+.controls span {
+  min-width:20px;
+  text-align:center;
+  font-weight:600;
+}
+.guest-panel .done-btn {
+  display:block;
+  margin:10px auto 0;
+  padding:.6rem 1.2rem;
+  border:0;
+  border-radius:999px;
+  background:#111827;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+.guest-panel .done-btn:hover {
+  background:#000;
+}
+
+/* ปุ่มค้นหา */
+.date-form button[type="submit"] {
+  border:0;
+  border-radius:999px;
+  padding:.9rem 1.8rem;
+  font-weight:700;
+  font-size:1rem;
+  background:var(--primary);
+  color:var(--primary-contrast);
+  cursor:pointer;
+  transition:.2s;
+  box-shadow:0 6px 16px rgba(15,139,121,.25);
+}
+.date-form button[type="submit"]:hover {
+  background:var(--primary-hover);
+  transform:translateY(-1px);
+}
+
+/* Room Card */
+.room-card {
+  margin:0 80px;
+  display:flex;
+  gap:16px;
+  align-items:center;
+  background:#fff;
+  border:1px solid #e7eef3;
+  border-radius:14px;
+  box-shadow:0 4px 16px rgba(16,24,40,.06);
+  padding:12px;
+}
+.room-card img {
+  width:180px;
+  height:120px;
+  object-fit:cover;
+  border-radius:10px;
+}
+.room-info { flex:1; }
+.room-info h2 { font-size:18px; margin:0 0 6px 0; }
+.room-info ul {
+  list-style:none;
+  padding:0;
+  margin:6px 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  font-size:14px;
+  color:#374151;
+}
+.room-info ul li::before {
+  content:"• ";
+  color:#9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+  .date-form {
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .guest-box {
+    width:100%;
+  }
+  .date-form > label {
+    width:100%;
+  }
+  .room-card {
+    flex-direction:column;
+    margin:0 20px;
+    align-items:flex-start;
+  }
+  .room-card img {
+    width:100%;
+    height:auto;
+  }
+  .room-actions {
+    width:100%;
+    justify-content:center;
+    padding-top:8px;
+  }
+  .date-form button[type="submit"] {
+    width:100%;
+  }
+}

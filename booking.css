@@ -1,0 +1,114 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  padding: 0;
+  color: #111827;
+}
+
+.booking-container {
+  max-width: 1080px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.steps {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.steps span {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #e5e7eb;
+}
+.steps .active {
+  background: #0f8b79;
+  color: #fff;
+}
+
+.booking-content {
+  display: flex;
+  gap: 20px;
+}
+
+.sidebar {
+  flex: 1;
+  background: #f3f4f6;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.form-section {
+  flex: 2;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.btn-book {
+  margin-top: 20px;
+  background: #0f8b79;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn-book:hover {
+  background: #0f8b79;
+}
+
+.coupon-box {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px dashed #ccc;
+}
+
+.coupon-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.coupon-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.coupon-input button {
+  background: #0f8b79;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.coupon-input button:hover {
+  background: #0a6b5c;
+}
+
+.coupon-result {
+  margin-top: 6px;
+  font-weight: bold;
+  min-height: 22px;
+}

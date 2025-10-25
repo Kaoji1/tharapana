@@ -1,0 +1,415 @@
+:root { 
+  --brand: #0f8b79;
+  --brand-600: #0b6a5d;
+  --ink: #0b1f2a;
+  --muted: #e2e8f0;
+  --chip: #f5f7fa;
+  --line: #e7eef3;
+  --warn: #ef4444;
+  --ok: #10b981;
+  --bg: #ffffff;
+  --shadow: 0 10px 28px rgba(16, 24, 40, .10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fafcff;
+  color: var(--ink);
+  font: 15px/1.45 system-ui, Segoe UI, Roboto;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px 16px 48px;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--brand);
+  border-bottom: 1px solid var(--brand-600);
+  box-shadow: 0 3px 10px rgba(16, 24, 40, .12);
+}
+
+.header .wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.header .brand {
+  font-weight: 900;
+}
+
+.header .badge {
+  background: rgba(255, 255, 255, .15);
+  border: 1px solid rgba(255, 255, 255, .25);
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+.header .badge small {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.btn-outline {
+  border: 1px solid #fff;
+  background: transparent;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, .15);
+}
+
+/* Body */
+.results-title {
+  margin: 22px 0 12px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media(min-width:720px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-media {
+  height: 160px;
+  background: #eaeef3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-weight: 700;
+}
+
+.card-media-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 14px 14px 12px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-title h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.left-chip {
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  background: var(--chip);
+  color: var(--ink);
+}
+
+.left-chip.ok {
+  border-color: #bcebdc;
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.left-chip.low {
+  border-color: #ffe0e0;
+  background: #fff5f5;
+  color: #991b1b;
+}
+
+.meta {
+  margin: 8px 0 12px;
+  color: #6b7b88;
+  font-size: 13px;
+}
+
+.cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b1f2a;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  background: var(--brand);
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--brand-600);
+}
+
+.btn[disabled] {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+/* ปุ่มรายละเอียดที่พัก */
+.btn-outline.btn-detail {
+  border: 1px solid var(--brand);
+  background: #fff;
+  color: var(--brand);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-outline.btn-detail:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
+.note-warn {
+  color: var(--warn);
+  font-weight: 700;
+}
+
+.footer-note {
+  margin-top: 18px;
+  color: #6b7b88;
+  font-size: 13px;
+}
+
+.empty {
+  background: #fff;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  color: #6b7b88;
+  max-width: 720px;
+  margin: 24px auto;
+}
+
+/* Modal popup */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: var(--shadow);
+  animation: fadeIn .3s ease;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content ul {
+  padding-left: 20px;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.close:hover {
+  color: var(--warn);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.features li::before {
+  content: "✔ ";
+  color: var(--brand);
+}
+
+.benefits {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.benefits h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.benefits ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.benefits li i {
+  color: var(--brand);
+}
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  max-height: 80vh;       /* จำกัดความสูงของ modal */
+  overflow-y: auto;       /* เปิดให้ scroll ได้ */
+  box-shadow: var(--shadow);
+  animation: fadeIn .3s ease;
+}
+
+
+
+/*รีวิว*/
+.reviews {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+}
+.reviews h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.avg-rating {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0f8b79;
+}
+.review-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.review-list li {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+.stars {
+  color: gold;
+  font-size: 14px;
+}
+.review-list {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+  opacity: 0;
+}
+
+.review-list.show {
+  display: block;
+  max-height: 500px;
+  opacity: 1;
+}
