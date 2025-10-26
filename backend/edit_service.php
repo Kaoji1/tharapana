@@ -4,11 +4,7 @@ include_once("connectdb.php");
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-// --- 1. CONNECT DB ---
-$host="localhost"; $usr="root"; $pwd=""; $dbName="tharapana";
-$conn = mysqli_connect($host,$usr,$pwd,$dbName);
-if (!$conn) { http_response_code(500); die('DB connect failed'); }
-mysqli_set_charset($conn, 'utf8mb4');
+
 
 // --- 3. FETCH DATA FOR DISPLAY ---
 $serve_types = [];
